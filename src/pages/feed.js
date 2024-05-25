@@ -1,5 +1,5 @@
 import Image from "next/image";
-import StatusUpdater from "@/components/statusUpdater";
+import StatusUpdater from "@/components/StatusUpdater";
 import StatusModal from "@/components/StatusModal";
 
 export default function Feed() {
