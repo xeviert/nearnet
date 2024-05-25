@@ -1,9 +1,12 @@
 import Image from "next/image";
+import LandingPage from '../pages/about';
+import Feed from '../pages/feed';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Testing
+    <main className="flex flex-col items-center justify-between">
+      {/* <LandingPage /> */}
+      <Feed />
     </main>
   );
 }
