@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function LandingPage() {
     return (
-<div className="min-h-screen bg-gray-100 p-6">
+      <div className="min-h-screen bg-gray-100 p-6">
         <section className="text-center my-8">
           <h3 className="text-3xl font-bold text-blue-600 mb-4">Help Your Neighbr Now!</h3>
           <div className="space-x-4">
