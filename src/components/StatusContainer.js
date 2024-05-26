@@ -6,7 +6,7 @@ export default function StatusContainer(props) {
         <div className="max-w-md mx-auto bg-white rounded-lg overflow-hidden shadow-lg my-5">
         <div className="px-6 py-4">
           <div className="font-bold text-xl mb-2">
-            {props.first_name}
+            {props.first_name}{' '}
             {props.last_name}
           </div>
           <h3 className="text-lg leading-tight font-semibold mb-2">{props.title}</h3>
