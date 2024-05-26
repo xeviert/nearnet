@@ -4,29 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import AuthApiService from '../../Services/auth-api-service';
 
 export default function LoginForm() {
-  const [error, setError] = useState(null);
-  const context = useContext(AppContext);
-  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const { email, password } = e.target;
-    setError(null);
-    
-    AuthApiService.postLogin({
-      email: email.value, 
-      password: password.value,
-    })    
-      .then((res) => {
-        email.value = '';
-        password.value = '';
-        context.processLogin(res.authToken)
-        navigate('/');
-      })
-      .catch((res) => {
-        setError({ error: res.error });
-      });
-  };
 
   return (
     <div>
