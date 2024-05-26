@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Login() {
   return (
     <section className="flex justify-center items-center min-h-screen bg-gray-150">
