@@ -1,49 +1,42 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function LandingPage() {
-    return (
-      <div className="min-h-screen bg-gray-100 p-6">
+  return (
+    <div className="min-h-screen bg-gray-150 p-6 flex flex-col items-center justify-center">
+      <div className="w-full max-w-4xl bg-white p-10 rounded-lg shadow-md">
         <section className="text-center my-8">
-          <h3 className="text-3xl font-bold text-blue-600 mb-4">Help Your Neighbr Now!</h3>
+          <h1 className="text-4xl font-bold text-blue-600 mb-6">Connect, Share, and Engage on NearNet</h1>
+          <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            NearNet is your digital neighborhood – a place where you can connect with your local community to share information, 
+            discuss events, and support one another. It’s all about making your neighborhood more accessible and enjoyable.
+          </p>
           <div className="space-x-4">
-            <div to='/register'>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                Register
-              </button>
-            </div>
-            <div to='/login'>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                Login
-              </button>
-            </div>
+            <Link href="/register" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+              Sign Up
+            </Link>
+            <Link href="/login" className="bg-transparent text-blue-600 border border-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition duration-300">
+              Login
+            </Link>
           </div>
         </section>
 
-        <section className="my-8">
-          <h3 className="text-3xl font-bold text-blue-600 mb-4">Help Your Neighbr</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Neighbr is an online bulletin board specifically for things that
-            your neighbrs need help with. Whether it's help with spring cleaning
-            or someone simply wants company, you can login and check to see what
-            your neighbrs are up to.
+        <section className="flex flex-col items-center my-8">
+          <h2 className="text-3xl font-bold text-blue-600 mb-4">Discover the Benefits of Your Online Neighborhood</h2>
+          <p className="text-center text-gray-700 leading-relaxed mb-6">
+            Whether you need a hand with a project, looking for local recommendations, or organizing a community event, NearNet brings everyone together. 
+            Experience a vibrant community life right at your fingertips.
           </p>
+          {/* <Image src="/images/community.png" alt="Community interaction" className="w-full h-auto rounded-md shadow-lg"/> */}
         </section>
 
         <section className="my-8">
-          <h3 className="text-3xl font-bold text-blue-600 mb-4">Need Help With Something?</h3>
+          <h2 className="text-3xl font-bold text-blue-600 mb-4">Stay Informed and Safe</h2>
           <p className="text-gray-700 leading-relaxed">
-            Sometimes you need an extra set of hands to help you with things
-            around the house. You can decide to post a favor with details on the
-            task.
-          </p>
-        </section>
-        <section className="my-8">
-          <h3 className="text-3xl font-bold text-blue-600 mb-4">Check it out!</h3>
-          <p className="text-gray-700 leading-relaxed">
-            Register to create an account. This gives access to a list of favors
-            that people in your neighborhood need help with.
+            Stay up-to-date with real-time updates about local news, safety alerts, and important neighborhood announcements. NearNet keeps you informed and prepared.
           </p>
         </section>
       </div>
-      );
-    }
+    </div>
+  );
+}

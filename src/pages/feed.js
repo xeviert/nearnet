@@ -1,4 +1,3 @@
-import Image from "next/image";
 import StatusUpdater from "@/components/StatusUpdater";
 import StatusContainer from "@/components/StatusContainer";
 

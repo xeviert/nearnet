@@ -11,6 +11,9 @@ export default function NavBar() {
       <div className="container mx-auto p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">NearNet</h1>
         <div className="hidden md:flex space-x-4">
+          <Link href="/feed">
+            <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
+          </Link>
           <Link href="/about">
             <span className="hover:text-gray-400 transition-colors duration-200">about</span>
           </Link>
