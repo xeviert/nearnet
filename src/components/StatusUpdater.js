@@ -51,7 +51,7 @@ function StatusUpdater() {
 //   const { first_name, last_name } = context;
 
   return (
-    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
+    <div className="inset-0 flex justify-center items-center z-50">
     <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
       <div className="flex justify-between items-center border-b pb-3">
         <span className="text-2xl font-bold">XT</span>
