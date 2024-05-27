@@ -3,21 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: 37, 166, 90; /* Glassdoor green */
-  --text-color: 60, 60, 60; /* Dark gray for text */
-  --background-color: 243, 246, 248; /* Light gray for background */
-  --border-color: 224, 224, 224; /* Light gray for borders */
+  --foreground-rgb: 40, 40, 40; /* Dark gray for text, more readable */
+  --background-start-rgb: 243, 246, 248; /* Light gray background start */
+  --background-end-rgb: 255, 255, 255; /* White background end */
+  --primary-green-rgb: 25, 135, 84; /* Glassdoor-like green for buttons and links */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 35, 35, 35;
+    --background-end-rgb: 50, 50, 50;
+    --primary-green-rgb: 25, 135, 84; /* Keeping the green vibrant even in dark mode */
+  }
 }
 
 body {
-  color: rgb(var(--text-color));
-  background-color: rgb(var(--background-color));
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
 }
 
-a {
-  color: rgb(var(--primary-color));
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .btn-primary {
+    background-color: rgb(var(--primary-green-rgb));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(var(--primary-green-rgb, 20, 120, 75));
+  }
 }
 
-a:hover {
-  color: rgb(30, 144, 74); /* Darker shade of green for hover */
-}

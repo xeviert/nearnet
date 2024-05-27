@@ -1,6 +1,6 @@
 export default function Login() {
   return (
-    <section className="flex justify-center items-center min-h-screen bg-gray-150">
+    <section className="flex justify-center items-center min-h-screen bg-gray-200">
       <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
         <h2 className="text-center text-2xl font-bold text-green-600 mb-4">Login</h2>
         <form className="space-y-6">

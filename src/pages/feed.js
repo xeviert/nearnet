@@ -71,7 +71,7 @@ export default function Feed() {
   ];
 
   return (
-    <div className="flex flex-col items-center bg-gray-100 min-h-screen py-6">
+    <div className="flex flex-col items-center bg-gray-200 min-h-screen py-6">
       <div className="w-full max-w-4xl">
         <StatusUpdater />
         {favors.map((favor) => (

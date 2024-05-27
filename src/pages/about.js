@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gray-150 p-6 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-gray-200 p-6 flex flex-col items-center justify-center">
       <div className="w-full max-w-4xl bg-white p-10 rounded-lg shadow-md">
         <section className="text-center my-8">
           <h1 className="text-4xl font-bold text-green-600 mb-6">Connect, Share, and Engage on NearNet</h1>
