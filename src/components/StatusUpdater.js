@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useContext } from 'react';
 
-export default function StatusUpdater() {
+export const StatusUpdater = () => {
   return (
     <div className="bg-white rounded-lg shadow p-6 mb-6 flex">
       <div className="flex-none">

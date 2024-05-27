@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function StatusContainer({ title, payment, description, posted, first_name, last_name }) {
+export const StatusContainer = ({ title, payment, description, posted, first_name, last_name }) => {
   return (
     <div className="bg-white rounded-lg shadow p-6 mb-6">
       <div className="flex items-center mb-4">

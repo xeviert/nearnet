@@ -1,5 +1,5 @@
-import StatusUpdater from "@/components/StatusUpdater";
-import StatusContainer from "@/components/StatusContainer";
+import { StatusUpdater } from "@/components/StatusUpdater";
+import { StatusContainer } from "@/components/StatusContainer";
 
 export default function Feed() {
 

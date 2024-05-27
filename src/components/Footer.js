@@ -1,4 +1,4 @@
-export default function Footer() {
+export const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white text-center p-4 mt-auto">
       <div className="font-bold text-lg">NearNet</div>
