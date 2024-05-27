@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function NavBar() {
+export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
