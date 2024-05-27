@@ -41,6 +41,9 @@ export default function NavBar() {
       {isOpen && (
         <div className="md:hidden bg-gray-800">
           <nav className="flex flex-col space-y-4 p-4">
+            <Link href="/feed">
+              <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
+            </Link>
             <Link href="/about">
               <span className="hover:text-gray-400 transition-colors duration-200">about</span>
             </Link>

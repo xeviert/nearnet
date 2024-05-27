@@ -1,98 +1,45 @@
 import Image from "next/image";
 import { useContext } from 'react';
 
-function StatusUpdater() {
-//   const context = useContext(AppContext);
-
-//   const [inputField, setInputField] = useState({
-//     title: '',
-//     payment: '',
-//     description: '',
-//   });
-
-//   const [error, setError] = useState(null);
-
-  const handleChange = (e) => {
-    // setInputField({ [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-
-    // const favor = {
-    //   title: inputField.title,
-    //   payment: inputField.payment,
-    //   description: inputField.description,
-    //   posted: new Date(),
-    // };
-
-    // fetch(`${config.API_ENDPOINT}/favors`, {
-    //   method: 'POST',
-    //   body: JSON.stringify(favor),
-    //   headers: {
-    //     'content-type': 'application/json',
-    //     authorization: `Bearer ${TokenService.getAuthToken()}`,
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((favor) => {
-    //     context.addFavor(favor);
-    //     setInputField({
-    //       title: '',
-    //       payment: '',
-    //       description: '',
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     setError(error);
-    //   });
-  };
-
-//   const { first_name, last_name } = context;
-
+export default function StatusUpdater() {
   return (
-    <div className="inset-0 flex justify-center items-center z-50">
-    <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-      <div className="flex justify-between items-center border-b pb-3">
-        <span className="text-2xl font-bold">XT</span>
+    <div className="bg-white rounded-lg shadow p-6 mb-6 flex">
+      <div className="flex-none">
+        <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+          <span className="text-gray-600 font-bold text-lg">
+            XT
+            {/* {first_name && first_name.length > 0 ? first_name[0] : ''}
+            {last_name && last_name.length > 0 ? last_name[0] : ''} */}
+          </span>
+        </div>
       </div>
-
-      <form className="space-y-4 mt-4">
-        <input
-          type="text"
-          placeholder="Favor Title"
-          name="title"
-          maxLength="20"
-          required
-          className="w-full p-2 border rounded-md"
-        />
-
-        <input
-          type="text"
-          placeholder="Payment $$"
-          name="payment"
-          maxLength="20"
-          required
-          className="w-full p-2 border rounded-md"
-        />
-
-        <textarea
-          placeholder="Description"
-          name="description"
-          maxLength="300"
-          type="text"
-          required
-          className="w-full p-2 border rounded-md h-40"
-        ></textarea>
-
-        <button type="submit" className="bg-blue-500 text-white rounded-full w-10 h-10 flex items-center justify-center">
-          +
-        </button>
-      </form>
+      <div className="flex-grow">
+        <form className="space-y-4 w-full">
+          <textarea
+            placeholder="What's on your mind?"
+            className="w-full p-3 border border-gray-300 rounded-md"
+            rows="3"
+          ></textarea>
+          <div className="flex justify-between items-center">
+            <input
+              type="text"
+              placeholder="Add a title"
+              className="w-full p-2 border border-gray-300 rounded-md mr-2"
+            />
+            <input
+              type="text"
+              placeholder="Payment $$"
+              className="w-32 p-2 border border-gray-300 rounded-md"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-green-600 hover:bg-green-700  text-white px-4 py-2 rounded-md"
+          >
+            Post
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-
   );
 }
-
-export default StatusUpdater;

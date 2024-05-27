@@ -71,20 +71,21 @@ export default function Feed() {
   ];
 
   return (
-    <>
-      <StatusUpdater />
-
-      {favors.map((favor) => (
-        <StatusContainer
-          title={favor.title}
-          payment={favor.payment}
-          description={favor.description}
-          posted={favor.posted}
-          first_name={favor.first_name}
-          last_name={favor.last_name}
-          key={favor.favor_id}
-        />
-      ))}
-    </>
+    <div className="flex flex-col items-center bg-gray-100 min-h-screen py-6">
+      <div className="w-full max-w-4xl">
+        <StatusUpdater />
+        {favors.map((favor) => (
+          <StatusContainer
+            key={favor.favor_id}
+            title={favor.title}
+            payment={favor.payment}
+            description={favor.description}
+            posted={favor.posted}
+            first_name={favor.first_name}
+            last_name={favor.last_name}
+          />
+        ))}
+      </div>
+    </div>
   )
 }

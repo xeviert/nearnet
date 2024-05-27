@@ -3,31 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --primary-color: 37, 166, 90; /* Glassdoor green */
+  --text-color: 60, 60, 60; /* Dark gray for text */
+  --background-color: 243, 246, 248; /* Light gray for background */
+  --border-color: 224, 224, 224; /* Light gray for borders */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-color));
+  background-color: rgb(var(--background-color));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+a {
+  color: rgb(var(--primary-color));
+}
+
+a:hover {
+  color: rgb(30, 144, 74); /* Darker shade of green for hover */
 }
