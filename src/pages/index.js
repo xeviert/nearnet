@@ -12,15 +12,11 @@ export default function LandingPage() {
             discuss events, and support one another. It’s all about making your neighborhood more accessible and enjoyable.
           </p>
           <div className="space-x-4">
-            <Link href="/register">
-              <a className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
+            <Link href="/register" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300">
                 Sign Up
-              </a>
             </Link>
-            <Link href="/login">
-              <a className="bg-transparent text-green-600 border border-green-600 px-6 py-3 rounded-lg hover:bg-green-600 hover:text-white transition duration-300">
+            <Link href="/login" className="bg-transparent text-green-600 border border-green-600 px-6 py-3 rounded-lg hover:bg-green-600 hover:text-white transition duration-300">
                 Login
-              </a>
             </Link>
           </div>
         </section>
