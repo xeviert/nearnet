@@ -35,4 +35,4 @@ function Profile() {
   );
 }
 
-export default withAuth(Profile);
+export default Profile;
