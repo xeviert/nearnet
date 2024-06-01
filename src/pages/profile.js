@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { withAuth } from '@/authMiddleware';
 
-export default function Profile() {
+function Profile() {
   const [userInfo] = useState({
     first_name: 'John',
     last_name: 'Doe',
@@ -34,5 +35,4 @@ export default function Profile() {
   );
 }
 
-
-  
+export default withAuth(Profile);

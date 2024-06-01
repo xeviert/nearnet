@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
- 
+
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -16,6 +16,9 @@ export default function NavBar() {
           </Link>
           <Link href="/about">
             <span className="hover:text-gray-400 transition-colors duration-200">about</span>
+          </Link>
+          <Link href="/profile">
+            <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
           </Link>
           <Link href="/login">
             <span className="hover:text-gray-400 transition-colors duration-200">login</span>
@@ -46,6 +49,9 @@ export default function NavBar() {
             </Link>
             <Link href="/about">
               <span className="hover:text-gray-400 transition-colors duration-200">about</span>
+            </Link>
+            <Link href="/profile">
+              <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
             </Link>
             <Link href="/login">
               <span className="hover:text-gray-400 transition-colors duration-200">login</span>
