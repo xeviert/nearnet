@@ -1,15 +1,23 @@
 'use client';
 
-import { useState } from 'react';
-import { withAuth } from '@/authMiddleware';
+import { useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import { getUserByUsername } from '../userStore';
 
 function Profile() {
-  const [userInfo] = useState({
-    first_name: 'John',
-    last_name: 'Doe',
-    address: '1234 Elm Street, Springfield, USA',
-    email: 'john.doe@example.com'
-  });
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    const username = Cookies.get('username');
+    if (username) {
+      const user = getUserByUsername(username);
+      setUserInfo(user);
+    }
+  }, []);
+
+  if (!userInfo) {
+    return <div>Loading...</div>;
+  }
 
   const firstNameInit = userInfo.first_name.charAt(0);
   const lastNameInit = userInfo.last_name.charAt(0);
