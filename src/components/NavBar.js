@@ -1,31 +1,53 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useUserContext } from '../context/UserContext';
+import { useRouter } from 'next/router';
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logoutUser } = useUserContext();
+  const router = useRouter();
+
+  const handleLogout = () => {
+    logoutUser();
+    router.push('/about');
+  };
 
   return (
     <header className="bg-gray-800 text-white shadow-md fixed w-full z-50 top-0">
       <div className="container mx-auto p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">NearNet</h1>
         <div className="hidden md:flex space-x-4">
-          <Link href="/feed">
-            <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
-          </Link>
-          <Link href="/about">
-            <span className="hover:text-gray-400 transition-colors duration-200">about</span>
-          </Link>
-          <Link href="/profile">
-            <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
-          </Link>
-          <Link href="/login">
-            <span className="hover:text-gray-400 transition-colors duration-200">login</span>
-          </Link>
-          <Link href="/register">
-            <span className="hover:text-gray-400 transition-colors duration-200">register</span>
-          </Link>
+          {user ? (
+            <>
+              <Link href="/feed">
+                <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
+              </Link>
+              <Link href="/profile">
+                <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
+              </Link>
+              <span
+                onClick={handleLogout}
+                className="cursor-pointer hover:text-gray-400 transition-colors duration-200"
+              >
+                logout
+              </span>
+            </>
+          ) : (
+            <>
+              <Link href="/about">
+                <span className="hover:text-gray-400 transition-colors duration-200">about</span>
+              </Link>
+              <Link href="/login">
+                <span className="hover:text-gray-400 transition-colors duration-200">login</span>
+              </Link>
+              <Link href="/register">
+                <span className="hover:text-gray-400 transition-colors duration-200">register</span>
+              </Link>
+            </>
+          )}
         </div>
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
@@ -44,21 +66,34 @@ export default function NavBar() {
       {isOpen && (
         <div className="md:hidden bg-gray-800">
           <nav className="flex flex-col space-y-4 p-4">
-            <Link href="/feed">
-              <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
-            </Link>
-            <Link href="/about">
-              <span className="hover:text-gray-400 transition-colors duration-200">about</span>
-            </Link>
-            <Link href="/profile">
-              <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
-            </Link>
-            <Link href="/login">
-              <span className="hover:text-gray-400 transition-colors duration-200">login</span>
-            </Link>
-            <Link href="/register">
-              <span className="hover:text-gray-400 transition-colors duration-200">register</span>
-            </Link>
+            {user ? (
+              <>
+                <Link href="/feed">
+                  <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
+                </Link>
+                <Link href="/profile">
+                  <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
+                </Link>
+                <span
+                  onClick={handleLogout}
+                  className="cursor-pointer hover:text-gray-400 transition-colors duration-200"
+                >
+                  logout
+                </span>
+              </>
+            ) : (
+              <>
+                <Link href="/about">
+                  <span className="hover:text-gray-400 transition-colors duration-200">about</span>
+                </Link>
+                <Link href="/login">
+                  <span className="hover:text-gray-400 transition-colors duration-200">login</span>
+                </Link>
+                <Link href="/register">
+                  <span className="hover:text-gray-400 transition-colors duration-200">register</span>
+                </Link>
+              </>
+            )}
           </nav>
         </div>
       )}
