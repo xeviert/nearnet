@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Cookies from 'js-cookie';
-import { getUserByUsername } from '../userStore';
+import { useUserContext } from '../context/UserContext';
 import { useFavorContext } from '../context/FavorContext';
 
 export default function StatusUpdater() {
+  const { user } = useUserContext();
   const { addFavor } = useFavorContext();
   const [initials, setInitials] = useState('XT');
   const [formData, setFormData] = useState({
@@ -15,16 +15,12 @@ export default function StatusUpdater() {
   });
 
   useEffect(() => {
-    const username = Cookies.get('username');
-    if (username) {
-      const user = getUserByUsername(username);
-      if (user) {
-        const firstNameInit = user.first_name.charAt(0);
-        const lastNameInit = user.last_name.charAt(0);
-        setInitials(`${firstNameInit}${lastNameInit}`);
-      }
+    if (user) {
+      const firstNameInit = user.first_name.charAt(0);
+      const lastNameInit = user.last_name.charAt(0);
+      setInitials(`${firstNameInit}${lastNameInit}`);
     }
-  }, []);
+  }, [user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,19 +29,15 @@ export default function StatusUpdater() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const username = Cookies.get('username');
-    if (username) {
-      const user = getUserByUsername(username);
-      if (user) {
-        addFavor(
-          formData.title,
-          formData.payment,
-          formData.description,
-          user.first_name,
-          user.last_name
-        );
-        setFormData({ title: '', payment: '', description: '' });
-      }
+    if (user) {
+      addFavor(
+        formData.title,
+        formData.payment,
+        formData.description,
+        user.first_name,
+        user.last_name
+      );
+      setFormData({ title: '', payment: '', description: '' });
     }
   };
 
