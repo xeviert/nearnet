@@ -44,49 +44,49 @@ export default function StatusUpdater() {
   return (
     <div className="inset-0 flex justify-center items-center z-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
-        <div className="flex justify-between items-center border-b pb-3">
-          <span className="text-2xl font-bold">{initials}</span>
-        </div>
-
-        <form className="space-y-4 mt-4" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Favor Title"
-            name="title"
-            maxLength="20"
-            required
-            className="w-full p-2 border rounded-md"
-            value={formData.title}
-            onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            placeholder="Payment $$"
-            name="payment"
-            maxLength="20"
-            required
-            className="w-full p-2 border rounded-md"
-            value={formData.payment}
-            onChange={handleChange}
-          />
-
-          <textarea
-            placeholder="Description"
-            name="description"
-            maxLength="300"
-            required
-            className="w-full p-2 border rounded-md h-40"
-            value={formData.description}
-            onChange={handleChange}
-          ></textarea>
-
-          <button
-            type="submit"
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
-          >
-            Post
-          </button>
+        <form className="flex items-start space-x-4" onSubmit={handleSubmit}>
+          <div className="shrink-0">
+            <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white text-xl font-bold">
+              {initials}
+            </div>
+          </div>
+          <div className="flex-1 space-y-4 w-full">
+            <input
+              type="text"
+              placeholder="Favor Title"
+              name="title"
+              maxLength="20"
+              required
+              className="w-full p-2 border rounded-md"
+              value={formData.title}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              placeholder="Payment $$"
+              name="payment"
+              maxLength="20"
+              required
+              className="w-full p-2 border rounded-md"
+              value={formData.payment}
+              onChange={handleChange}
+            />
+            <textarea
+              placeholder="Description"
+              name="description"
+              maxLength="300"
+              required
+              className="w-full p-2 border rounded-md h-40"
+              value={formData.description}
+              onChange={handleChange}
+            ></textarea>
+            <button
+              type="submit"
+              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
+            >
+              Post
+            </button>
+          </div>
         </form>
       </div>
     </div>
