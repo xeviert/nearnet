@@ -11,12 +11,21 @@ export const FavorProvider = ({ children }) => {
   const [favors, setFavors] = useState([]);
 
   useEffect(() => {
-    setFavors(fetchFavors());
+    const sessionFavors = JSON.parse(sessionStorage.getItem('favors'));
+    if (sessionFavors) {
+      setFavors(sessionFavors);
+    } else {
+      const initialFavors = fetchFavors();
+      setFavors(initialFavors);
+      sessionStorage.setItem('favors', JSON.stringify(initialFavors));
+    }
   }, []);
 
   const addFavor = (title, payment, description, firstName, lastName) => {
     const newFavor = addNewFavor(title, payment, description, firstName, lastName);
-    setFavors((prevFavors) => [newFavor, ...prevFavors]);
+    const updatedFavors = [newFavor, ...favors];
+    setFavors(updatedFavors);
+    sessionStorage.setItem('favors', JSON.stringify(updatedFavors));
   };
 
   return (
