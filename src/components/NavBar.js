@@ -43,9 +43,6 @@ export default function NavBar() {
               <Link href="/login">
                 <span className="hover:text-gray-400 transition-colors duration-200">login</span>
               </Link>
-              <Link href="/register">
-                <span className="hover:text-gray-400 transition-colors duration-200">register</span>
-              </Link>
             </>
           )}
         </div>
@@ -88,9 +85,6 @@ export default function NavBar() {
                 </Link>
                 <Link href="/login">
                   <span className="hover:text-gray-400 transition-colors duration-200">login</span>
-                </Link>
-                <Link href="/register">
-                  <span className="hover:text-gray-400 transition-colors duration-200">register</span>
                 </Link>
               </>
             )}

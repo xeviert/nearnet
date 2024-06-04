@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useUserContext } from '../context/UserContext';
 
@@ -73,11 +74,19 @@ export default function Login() {
           </div>
           <button
             type="submit"
-            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Login
           </button>
         </form>
+        <div className="mt-6 text-center">
+          <p>Don't have an account?</p>
+          <Link href="/register">
+            <span className="text-green-600 hover:text-green-900">
+              <em>Sign Up</em>
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   );
