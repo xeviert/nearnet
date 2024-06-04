@@ -19,18 +19,18 @@ export default function NavBar() {
     <header className="bg-gray-800 text-white shadow-md fixed w-full z-50 top-0">
       <div className="container mx-auto p-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">NearNet</h1>
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden md:flex space-x-14">
           {user ? (
             <>
               <Link href="/feed">
-                <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
+                <span className="hover:text-green-400 transition-colors duration-200">feed</span>
               </Link>
               <Link href="/profile">
-                <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
+                <span className="hover:text-green-400 transition-colors duration-200">profile</span>
               </Link>
               <span
                 onClick={handleLogout}
-                className="cursor-pointer hover:text-gray-400 transition-colors duration-200"
+                className="cursor-pointer hover:text-green-400 transition-colors duration-200"
               >
                 logout
               </span>
@@ -38,10 +38,10 @@ export default function NavBar() {
           ) : (
             <>
               <Link href="/about">
-                <span className="hover:text-gray-400 transition-colors duration-200">about</span>
+                <span className="hover:text-green-400 transition-colors duration-200">about</span>
               </Link>
               <Link href="/login">
-                <span className="hover:text-gray-400 transition-colors duration-200">login</span>
+                <span className="hover:text-green-400 transition-colors duration-200">login</span>
               </Link>
             </>
           )}
@@ -62,18 +62,18 @@ export default function NavBar() {
       </div>
       {isOpen && (
         <div className="md:hidden bg-gray-800">
-          <nav className="flex flex-col space-y-4 p-4">
+          <nav className="flex flex-col space-y-6 p-4">
             {user ? (
               <>
                 <Link href="/feed">
-                  <span className="hover:text-gray-400 transition-colors duration-200">feed</span>
+                  <span className="hover:text-green-400 transition-colors duration-200">feed</span>
                 </Link>
                 <Link href="/profile">
-                  <span className="hover:text-gray-400 transition-colors duration-200">profile</span>
+                  <span className="hover:text-green-400 transition-colors duration-200">profile</span>
                 </Link>
                 <span
                   onClick={handleLogout}
-                  className="cursor-pointer hover:text-gray-400 transition-colors duration-200"
+                  className="cursor-pointer hover:text-green-400 transition-colors duration-200"
                 >
                   logout
                 </span>
@@ -81,7 +81,7 @@ export default function NavBar() {
             ) : (
               <>
                 <Link href="/about">
-                  <span className="hover:text-gray-400 transition-colors duration-200">about</span>
+                  <span className="hover:text-green-400 transition-colors duration-200">about</span>
                 </Link>
                 <Link href="/login">
                   <span className="hover:text-gray-400 transition-colors duration-200">login</span>
