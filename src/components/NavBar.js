@@ -18,10 +18,15 @@ export default function NavBar() {
   return (
     <header className="bg-gray-800 text-white shadow-md fixed w-full z-50 top-0">
       <div className="container mx-auto p-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">NearNet</h1>
+        <Link href="/about">
+          <h1 className="text-2xl font-bold hover:text-green-400 duration-200">NearNet</h1>
+        </Link>
         <div className="hidden md:flex space-x-14">
           {user ? (
             <>
+              <Link href="/about">
+                <span className="hover:text-green-400 transition-colors duration-200">about</span>
+              </Link>
               <Link href="/feed">
                 <span className="hover:text-green-400 transition-colors duration-200">feed</span>
               </Link>
@@ -65,6 +70,9 @@ export default function NavBar() {
           <nav className="flex flex-col space-y-6 p-4">
             {user ? (
               <>
+                <Link href="/about">
+                  <span className="hover:text-green-400 transition-colors duration-200">about</span>
+                </Link>
                 <Link href="/feed">
                   <span className="hover:text-green-400 transition-colors duration-200">feed</span>
                 </Link>

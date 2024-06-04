@@ -44,6 +44,11 @@ export default function Login() {
     <section className="flex justify-center items-center min-h-screen bg-gray-200">
       <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-md">
         <h2 className="text-center text-2xl font-bold mb-4">Login</h2>
+        <div className="outline outline-1 outline-offset-2 rounded-md mb-8">
+          <div className="text-center text-l font-bold mb-2">Demo Credentials</div>
+          <div className="text-center text-l">Username: admin</div>
+          <div className="text-center text-l">Password: password</div>
+        </div>
         {error && <div className="text-red-500 text-center mb-4">{error}</div>}
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { getFavors as fetchFavors, addFavor as addNewFavor } from '../favorsStore';
 
 const FavorContext = createContext();
@@ -8,7 +8,11 @@ export const useFavorContext = () => {
 };
 
 export const FavorProvider = ({ children }) => {
-  const [favors, setFavors] = useState(fetchFavors());
+  const [favors, setFavors] = useState([]);
+
+  useEffect(() => {
+    setFavors(fetchFavors());
+  }, []);
 
   const addFavor = (title, payment, description, firstName, lastName) => {
     const newFavor = addNewFavor(title, payment, description, firstName, lastName);

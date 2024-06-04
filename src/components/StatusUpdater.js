@@ -46,7 +46,7 @@ export default function StatusUpdater() {
       <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
         <form className="flex items-start space-x-4" onSubmit={handleSubmit}>
           <div className="shrink-0">
-            <div className="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white text-xl font-bold">
+            <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white text-xl font-bold">
               {initials}
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function StatusUpdater() {
             ></textarea>
             <button
               type="submit"
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md"
+              className="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded-md"
             >
               Post
             </button>
