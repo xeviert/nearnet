@@ -68,34 +68,45 @@ NearNet is a modern web application designed to facilitate neighborhood interact
 
 ## File Structure
   ```arduino
-    nearnet/
-    ├── public/
-    │   ├── images/
-    │   │   └── community.jpg
-    │   └── favicon.ico
-    ├── src/
-    │   ├── components/
-    │   │   ├── Footer.js
-    │   │   ├── NavBar.js
-    │   │   ├── StatusContainer.js
-    │   │   └── StatusUpdater.js
-    │   ├── context/
-    │   │   ├── FavorContext.js
-    │   │   └── UserContext.js
-    │   ├── pages/
-    │   │   ├── _app.js
-    │   │   ├── index.js
-    │   │   ├── login.js
-    │   │   ├── profile.js
-    │   │   └── register.js
-    │   ├── styles/
-    │   │   └── global.css
-    │   ├── userStore.js
-    │   └── favorsStore.js
-    ├── .gitignore
-    ├── package.json
-    ├── README.md
-    └── next.config.js
+nearnet/
+├── public/
+│ ├── images/
+│ │  └── community.jpg
+│ └── favicon.ico
+├── src/
+│ ├── components/
+│ │  ├── Footer.js
+│ │  ├── NavBar.js
+│ │  ├── StatusContainer.js
+│ │  └── StatusUpdater.js
+│ ├── context/
+│ │   ├── FavorContext.js
+│ │   └── UserContext.js
+│ ├── helpers/
+│ │ └── authMiddleware.js
+│ ├── pages/
+│ │ ├── api/
+│ │ │ ├── auth.js
+│ │ │ ├── login.js
+│ │ │ ├── logout.js
+│ │ │ └── register.js
+│ │ ├── about.js
+│ │ ├── feed.js
+│ │ ├── index.js
+│ │ ├── login.js
+│ │ ├── profile.js
+│ │ └── register.js
+│ ├── favorsStore.js
+│ └── userStore.js
+├── .gitignore
+├── .eslintrc.json
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── README.md
+└── tailwind.config.js
 ```
 
 ## Contributing
