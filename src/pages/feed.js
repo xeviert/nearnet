@@ -1,8 +1,9 @@
 import { useFavorContext } from '../context/FavorContext';
 import StatusUpdater from '@/components/StatusUpdater';
 import StatusContainer from '@/components/StatusContainer';
+import { withAuth } from '@/authMiddleware';
 
-export default function Feed() {
+const Feed = () => {
   const { favors } = useFavorContext();
 
   return (
@@ -21,4 +22,6 @@ export default function Feed() {
       ))}
     </div>
   );
-}
+};
+
+export default withAuth(Feed);

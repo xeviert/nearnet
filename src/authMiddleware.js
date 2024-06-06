@@ -1,21 +1,20 @@
-import { parseCookies } from 'nookies';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { useUserContext } from './context/UserContext';
 
 export function withAuth(Component) {
   return function AuthenticatedComponent(props) {
-    const cookies = parseCookies();
-    const auth = cookies.auth;
+    const { user } = useUserContext();
+    const router = useRouter();
 
-    if (!auth) {
-      if (typeof window !== 'undefined') {
-        window.location.href = '/login';
-      } else {
-        return {
-          redirect: {
-            destination: '/login',
-            permanent: false,
-          },
-        };
+    useEffect(() => {
+      if (!user) {
+        router.push('/login');
       }
+    }, [user, router]);
+
+    if (!user) {
+      return <div>Loading...</div>; // Show a loading indicator while redirecting
     }
 
     return <Component {...props} />;

@@ -2,8 +2,9 @@
 
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../context/UserContext';
+import { withAuth } from '@/authMiddleware';
 
-function Profile() {
+const Profile = () => {
   const { user } = useContext(UserContext);
 
   useEffect(() => {
@@ -42,4 +43,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default withAuth(Profile);
