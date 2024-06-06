@@ -16,7 +16,7 @@ export default function handler(req, res) {
     addUser(username, hashedPassword);
 
     cookies.set('username', username, { httpOnly: true });
-    cookies.set('auth', 'authenticated', { httpOnly: true });
+    cookies.set('auth', 'authenticated', { httpOnly: true, expires: 1 / 96 });
 
     return res.status(201).json({ message: 'User registered and logged in successfully' });
   }
